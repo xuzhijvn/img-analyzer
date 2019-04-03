@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import com.jfoenix.transitions.hamburger.HamburgerBackArrowBasicTransition?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.String?>
+
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.*?>
+
+<StackPane fx:id="root" xmlns:fx="http://javafx.com/fxml/1"
+           xmlns="http://javafx.com/javafx/2.2">
+    <!-- Header -->
+    <BorderPane  xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+    	<bottom>
+			<FlowPane fx:id="fpBottomPane" alignment="CENTER" columnHalignment="CENTER" hgap="50.0" prefHeight="80.0" prefWidth="200.0" style="-fx-background-color:#ccc;">
+				<children>
+					<JFXButton fx:id="btnStartCamera"  onAction="#startCamera"  text="Start Camera" prefHeight="50.0" prefWidth="190.0"
+						minHeight="-Infinity" minWidth="-Infinity" buttonType="RAISED" style="-fx-text-fill:WHITE;-fx-background-color:#5264AE;-fx-font-size:14px;">
+						<font>
+							<Font name="Segoe UI" size="18.0" fx:id="x1" />
+						</font>
+					</JFXButton>
+					<JFXButton fx:id="btnStopCamera" font="$x1" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#stopCamera" prefHeight="50.0" prefWidth="190.0" text="Stop Camera" 
+						buttonType="RAISED" style="-fx-text-fill:WHITE;-fx-background-color:#5264AE;-fx-font-size:14px;"/>
+					<JFXButton fx:id="btnDisposeCamera" font="$x1" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#disposeCamera" prefHeight="50.0" prefWidth="190.0" text="Dispose Camera" 
+						buttonType="RAISED" style="-fx-text-fill:WHITE;-fx-background-color:#5264AE;-fx-font-size:14px;"/>
+				</children>
+			</FlowPane>			
+		</bottom>
+        <top>
+			<GridPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="120.0" style="-fx-background-color:#ccc;&#10;">
+				<children>
+
+					<Label font="$x1" text="Please Select WebCam" GridPane.columnIndex="0" GridPane.halignment="RIGHT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+						<GridPane.margin>
+							<Insets left="5.0" right="10.0" />
+						</GridPane.margin>
+					</Label>
+					<ComboBox fx:id="cbCameraOptions" prefHeight="38.0" prefWidth="357.0" style="-fx-font-size: 18px;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+				</children>
+				<columnConstraints>
+					<ColumnConstraints hgrow="SOMETIMES" maxWidth="795.0" minWidth="10.0" prefWidth="418.0" />
+					<ColumnConstraints hgrow="SOMETIMES" maxWidth="502.0" minWidth="10.0" prefWidth="482.0" />
+				</columnConstraints>
+				<rowConstraints>
+					<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+					<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+				</rowConstraints>
+			</GridPane>
+        </top>
+
+        <!-- Content Area -->
+        <center>
+        	<BorderPane fx:id="bpWebCamPaneHolder" prefHeight="200.0" prefWidth="200.0">
+				<center>
+					<ImageView fx:id="imgWebCamCapturedImage" fitHeight="100.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER_LEFT" />
+				</center>
+			</BorderPane>
+        </center>
+        <right>
+
+      		<JFXDrawer fx:id="drawer" defaultDrawerSize="0" direction="LEFT">
+                <styleClass>
+                    <String fx:value="body"/>
+                </styleClass>
+            </JFXDrawer>
+   		</right>
+    </BorderPane>
+</StackPane>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.*?>
+<StackPane fx:id="root" xmlns:fx="http://javafx.com/fxml/1"
+           xmlns="http://javafx.com/javafx/2.2">
+    <VBox maxWidth="400" maxHeight="600" spacing="10" fx:id="items">
+        <children>
+            <HBox alignment="CENTER">
+                <Label styleClass="title-label">All of Items</Label>
+                <Label styleClass="title-label" fx:id="treeTableViewCount" minWidth="60"></Label>
+                <StackPane HBox.hgrow="ALWAYS">
+                    <StackPane StackPane.alignment="CENTER_RIGHT" maxWidth="145">
+                        <JFXTextField fx:id="searchField" promptText="Search..."></JFXTextField>
+                    </StackPane>
+                </StackPane>
+            </HBox>
+            <JFXTreeTableView fx:id="treeTableView" minHeight="500">
+        	   <columns>
+                    <JFXTreeTableColumn fx:id="nameColumn" text="Item"
+                                        minWidth="120" prefWidth="120" resizable="false"></JFXTreeTableColumn>
+                                        
+                    <JFXTreeTableColumn fx:id="referColumn" text="Reference"
+                                        minWidth="40" resizable="false"></JFXTreeTableColumn>
+                                        
+                    <JFXTreeTableColumn fx:id="actualColumn" text="Actual"
+                                        minWidth="90" resizable="false"></JFXTreeTableColumn>
+                </columns>
+            </JFXTreeTableView>
+        </children>
+    </VBox>
+</StackPane>
